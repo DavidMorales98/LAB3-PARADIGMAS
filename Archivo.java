@@ -22,4 +22,13 @@ public class Archivo{
 		a.fechaA=df.format(fecha);		
 		return a;
 	}
+        public void modificarArchivoContenido(String nombre){
+               this.nombre = nombre;
+        }
+        public void modificarArchivoNombre(String contenido){
+               this.contenido = contenido;
+  		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		Date fecha = new Date();		
+		this.fechaA=df.format(fecha);             
+        }
 }

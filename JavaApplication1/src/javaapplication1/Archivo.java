@@ -23,10 +23,10 @@ public class Archivo{
 		a.fechaA=df.format(fecha);		
 		return a;
 	}
-    public void modificarArchivoNombre(String nombre){
+    public void setNombre(String nombre){
                this.nombre = nombre;
         }        
-    public void modificarArchivoContenido(String contenido){
+    public void setContenido(String contenido){
                this.contenido = contenido;
   		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Date fecha = new Date();		

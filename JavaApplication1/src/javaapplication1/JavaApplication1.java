@@ -19,7 +19,7 @@ public class JavaApplication1 {
         Archivo a = new Archivo();
         a.crearArchivo(a);
         System.out.println(a);
-        a.modificarArchivoContenido("pana miguel");
+        a.setContenido("pana miguel");
         System.out.println(a);
     }
     

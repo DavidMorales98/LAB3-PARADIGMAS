@@ -11,17 +11,17 @@ public class Archivo{
     private String contenido ;
 	
     public Archivo crearArchivo(Archivo a){
-		Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);
 		
-		System.out.println("Ingrese nombre de archivo");
-		a.nombre = in.nextLine();
+	System.out.println("Ingrese nombre de archivo:");
+	a.nombre = in.nextLine();
 		
-		System.out.println("Ingrese el contenido");
-		a.contenido = in.nextLine();
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		Date fecha = new Date();		
-		a.fechaA=df.format(fecha);		
-		return a;
+	System.out.println("Ingrese el contenido:");
+	a.contenido = in.nextLine();
+	DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	Date fecha = new Date();		
+	a.fechaA=df.format(fecha);		
+	return a;
 	}
     public void setNombre(String nombre){
                this.nombre = nombre;

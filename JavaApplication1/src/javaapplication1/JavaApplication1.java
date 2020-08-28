@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package javaapplication1;
+import java.util.Scanner;
 
 /**
  *
@@ -15,7 +16,11 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Archivo a = new Archivo();
+        a.crearArchivo(a);
+        System.out.println(a);
+        a.modificarArchivoContenido("pana miguel");
+        System.out.println(a);
     }
     
 }

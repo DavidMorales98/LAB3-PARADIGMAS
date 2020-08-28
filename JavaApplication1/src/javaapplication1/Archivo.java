@@ -1,15 +1,16 @@
+package javaapplication1;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.util.Date;
 
 public class Archivo{
-	public String nombre ;
-	private String fechaA ;
-	private String contenido ;
+    public String nombre ;
+    private String fechaA ;
+    private String contenido ;
 	
-	public static  Archivo crearArchivo(Archivo a){
-		a = new Archivo();
+    public Archivo crearArchivo(Archivo a){
 		Scanner in = new Scanner(System.in);
 		
 		System.out.println("Ingrese nombre de archivo");
@@ -22,14 +23,17 @@ public class Archivo{
 		a.fechaA=df.format(fecha);		
 		return a;
 	}
-        public void modificarArchivoNombre(String nombre){
+    public void modificarArchivoNombre(String nombre){
                this.nombre = nombre;
-        }
-        public void modificarArchivoContenido(String contenido){
+        }        
+    public void modificarArchivoContenido(String contenido){
                this.contenido = contenido;
   		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Date fecha = new Date();		
 		this.fechaA=df.format(fecha);             
         }
-        
+    @Override
+    public String toString() {
+        return "Archivo{" + "nombre=" + nombre + ", fechaA=" + fechaA + ", contenido=" + contenido + '}';
+    }      
 }

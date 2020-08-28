@@ -19,7 +19,7 @@ public class Commit {
     public String autor;
     private String fechaC;
     private String mensaje;
-    private ArrayList archivos[];
+    private Archivo archivos[];
     
     public Commit crearCommit(Commit c){
         Scanner in = new Scanner(System.in);

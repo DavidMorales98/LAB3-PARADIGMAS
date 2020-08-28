@@ -16,7 +16,7 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        System.out.println("##SIMULACIÓN DE GIT##");
+        System.out.println("### SIMULACIÓN DE GIT ###");
         System.out.println("Escoja su opción:");
         System.out.println("1. add");
         System.out.println("2. commit");
@@ -25,11 +25,32 @@ public class JavaApplication1 {
         System.out.println("5. status");
         System.out.println("6. Crear nuevo archivo");
         System.out.println("INTRODUZCA SU OPCIÓN");
-        Archivo a = new Archivo();
-        a.crearArchivo(a);
-        System.out.println(a);
-        a.setContenido("pana miguel");
-        System.out.println(a);
+        
+        Scanner in = new Scanner(System.in);
+        int opcion = in.nextInt();
+        if (opcion == 1){
+            System.out.println("gitAdd");            
+        }
+        else if (opcion == 2){
+            System.out.println("gitCommit");            
+        }
+        else if (opcion == 3){
+            System.out.println("gitPush");            
+        }
+        else if (opcion == 4){
+            System.out.println("gitPull");            
+        }
+        else if (opcion == 5){
+            System.out.println("gitStatus");            
+        }
+        else if (opcion == 6){
+          Archivo a = new Archivo();
+          a.crearArchivo(a);
+          System.out.println(a);            
+        }
+        else{
+            System.out.println("El valor no es válido.");
+        }
     }
-    
 }
+    

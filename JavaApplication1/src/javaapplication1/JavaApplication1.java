@@ -17,7 +17,14 @@ public class JavaApplication1 {
      */
     public static void main(String[] args){
         boolean menuSimulador = true;
-        boolean repositorioInicializado = true;
+        boolean repositorioInicializado = false;
+        Scanner in = new Scanner(System.in);
+        System.out.println("¿Desea inicializar su repositorio?(Si/No)");
+        int resp = in.nextInt();
+        if (resp == 1){
+            
+            repositorioInicializado = true;
+        }
         while (menuSimulador == true){
             System.out.println("### SIMULACIÓN DE GIT ###");
             System.out.println("Escoja su opción:");
@@ -27,9 +34,7 @@ public class JavaApplication1 {
             System.out.println("4. push");
             System.out.println("5. status");
             System.out.println("6. Crear nuevo archivo");
-            System.out.println("INTRODUZCA SU OPCIÓN");
-            
-            Scanner in = new Scanner(System.in);
+            System.out.println("INTRODUZCA SU OPCIÓN");            
             int opcion = in.nextInt();
             if (repositorioInicializado == true){
                 if (opcion == 1){

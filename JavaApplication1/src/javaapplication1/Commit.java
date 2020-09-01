@@ -21,7 +21,7 @@ public class Commit {
     private String mensaje;
     private Archivo archivos[];
     
-    public Commit crearCommit(Commit c){
+    public Commit crearCommit(Commit c, Index i){
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese el autor:");
         c.autor = in.nextLine();
@@ -31,9 +31,10 @@ public class Commit {
 	DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	Date fecha = new Date();		
 	c.fechaC=df.format(fecha);
-        
+        c.archivos= i.archivosIndex ;
         
         return c;
     }
+    
     
 }

@@ -33,27 +33,27 @@ public class JavaApplication1 {
             int opcion = in.nextInt();
             if (repositorioInicializado == true){
                 if (opcion == 1){
-                    System.out.println("gitAdd");            
+                        System.out.println("gitAdd");
                 }
                 else if (opcion == 2){
-                    System.out.println("gitCommit");            
+                        System.out.println("gitCommit");
                 }
                 else if (opcion == 3){
-                    System.out.println("gitPush");            
+                        System.out.println("gitPush");
                 }
                 else if (opcion == 4){
-                    System.out.println("gitPull");            
+                        System.out.println("gitPull");
                 }
                 else if (opcion == 5){
-                    System.out.println("gitStatus");            
+                        System.out.println("gitStatus");
                 }
                 else if (opcion == 6){
-                    Archivo a = new Archivo();
-                    a.crearArchivo(a);
-                    System.out.println(a);            
+                        Archivo a = new Archivo();
+                        a.crearArchivo(a);
+                        System.out.println(a);
                 }
                 else{
-                    System.out.println("El valor no es válido.");
+                        System.out.println("El valor no es válido.");
                 }
             }
             else{
@@ -62,4 +62,4 @@ public class JavaApplication1 {
         }
     }
 }
-    
+

@@ -4,17 +4,22 @@
  * and open the template in the editor.
  */
 package javaapplication1;
-
+import java.util.ArrayList;
 /**
  *
  * @author David
  */
 public class Workspace {
-    public int nA;
-    public Archivo archivosWorkspace[]= new Archivo[nA];
+    int nArchivos;
+    public Archivo archivosWorkspace[] = new Archivo[nArchivos];
     
-    public Workspace añadirArchivo(Workspace w){
-        return w;
+    public boolean añadirArchivo( Archivo a){
+        for (int i = 0; i < archivosWorkspace.length; i++){
+            if (archivosWorkspace[i] == null){
+                archivosWorkspace[i] = a;
+                return true;
+            }
+        }
+        return false;
     }
-    
 }

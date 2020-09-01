@@ -10,9 +10,11 @@ import java.util.ArrayList;
  * @author David
  */
 public class Workspace {
-    int nArchivos;
-    public Archivo archivosWorkspace[] = new Archivo[nArchivos];
+    public Archivo archivosWorkspace[];
     
+    public Workspace(int n){
+        archivosWorkspace = new Archivo[n];
+    }
     public boolean añadirArchivo( Archivo a){
         for (int i = 0; i < archivosWorkspace.length; i++){
             if (archivosWorkspace[i] == null){
@@ -22,4 +24,10 @@ public class Workspace {
         }
         return false;
     }
+    public void imprimirWorkspace(){
+        for (int j = 0; j < archivosWorkspace.length; j++){
+            System.out.println(archivosWorkspace[j]);
+        }
+    }
 }
+

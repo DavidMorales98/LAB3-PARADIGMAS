@@ -17,7 +17,7 @@ public class JavaApplication1 {
      */
     public static void main(String[] args){
         boolean menuSimulador = true;
-        boolean repositorioInicializado = false;
+        boolean repositorioInicializado = true;
         while (menuSimulador == true){
             System.out.println("### SIMULACIÓN DE GIT ###");
             System.out.println("Escoja su opción:");
@@ -48,9 +48,10 @@ public class JavaApplication1 {
                         System.out.println("gitStatus");
                 }
                 else if (opcion == 6){
+                        Workspace w = new Workspace(2);
                         Archivo a = new Archivo();
                         a.crearArchivo(a);
-                        System.out.println(a);
+                        w.añadirArchivo(a);
                 }
                 else{
                         System.out.println("El valor no es válido.");
@@ -62,4 +63,5 @@ public class JavaApplication1 {
         }
     }
 }
+
 

@@ -19,10 +19,11 @@ public class JavaApplication1 {
         boolean menuSimulador = true;
         boolean repositorioInicializado = false;
         Scanner in = new Scanner(System.in);
-        System.out.println("¿Desea inicializar su repositorio?(Si/No)");
+        System.out.println("¿Desea inicializar su repositorio?(1.-Si/2.-No)");
         int resp = in.nextInt();
         if (resp == 1){
-            
+            System.out.println("Ingrese nombre de autor:");
+            System.out.println("Ingrese nombre repositorio:");
             repositorioInicializado = true;
         }
         while (menuSimulador == true){

@@ -19,6 +19,13 @@ public class Index {
     public Index(){}
     
     //Metodos
+    //Getter and Setter
+    public void setIndex(ArrayList<Archivo> index) {
+        this.index = index;
+    }
+    public ArrayList<Archivo> getArchivos(){    
+        return index;
+    }
     //add
     public void add(Archivo a){
         index.add(a);

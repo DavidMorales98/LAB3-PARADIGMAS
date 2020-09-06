@@ -9,6 +9,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.util.Date;
+import java.util.ArrayList;
 /**
  *
  * @author David
@@ -18,10 +19,10 @@ public class Commit {
     public String autor;
     public String fechaC;
     public String mensaje;
-    public Archivo archivos[];
+    public ArrayList<Archivo> archivosCommit;
     
     //Constructor
-    public void crearCommit(){
+    public void crearCommit(ArrayList<Archivo> archivos){
         Scanner in = new Scanner(System.in);
         System.out.println("Ingrese el autor:");
         this.autor = in.nextLine();
@@ -32,13 +33,17 @@ public class Commit {
 	DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	Date fecha = new Date();		
 	this.fechaC=df.format(fecha);
+        
+        this.archivosCommit = archivos;
+                
     }
-    public void crearCommit(String autor, String mensaje){
+    public void crearCommit(String autor, String mensaje,ArrayList<Archivo> archivos){
         this.autor = autor;
         this.mensaje = mensaje;
 	DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	Date fecha = new Date();		
 	this.fechaC=df.format(fecha);
+        this.archivosCommit = archivos;
     }
     
     //Metodos
@@ -67,17 +72,17 @@ public class Commit {
         this.mensaje = mensaje;
     }
 
-    public Archivo[] getArchivos() {
-        return archivos;
+    public ArrayList<Archivo> getArchivos() {
+        return archivosCommit;
     }
 
-    public void setArchivos(Archivo[] archivos) {
-        this.archivos = archivos;
+    public void setArchivos(ArrayList<Archivo> archivos) {
+        this.archivosCommit = archivos;
     }
     
     
     @Override
     public String toString(){
-        return "Commit{" + "fechaC=" + fechaC + ", autor=" + autor + ", mensaje=" + mensaje + "archivos=" + archivos + "}";
+        return "Commit{" + "fechaC=" + fechaC + ", autor=" + autor + ", mensaje= " + mensaje + ", archivos=" + archivosCommit + "}";
     }    
 }

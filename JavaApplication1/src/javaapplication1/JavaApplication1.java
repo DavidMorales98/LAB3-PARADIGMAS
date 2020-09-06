@@ -19,29 +19,29 @@ public class JavaApplication1 {
     public static void main(String[] args){
         Repositorios git = new Repositorios();
         git.init("David","LAB");
-        
         Archivo a = new Archivo();
-        a.crearArchivo("A","aa");
-        
+        a.crearArchivo("A","aa");      
         Archivo b = new Archivo();
-        b.crearArchivo("A","aaa");
-        
+        b.crearArchivo("A","aaa");       
         Archivo c = new Archivo();
-        c.crearArchivo("AA","aaa");
-        
+        c.crearArchivo("AA","aaa");       
         git.agregarArchivo(a);
         git.agregarArchivo(b);
-        git.agregarArchivo(c);
+        git.agregarArchivo(c); 
+        git.add();
         
-        System.out.print(git.getW());
         System.out.print(git.getI());
         
-        git.add();
-        System.out.print(git.getW());
-        System.out.print(git.getI());        
+        Commit c1 = new Commit();
+        ArrayList<Archivo> archivosCommit = new ArrayList<Archivo>();    
         
-        git.status();
-        
+        for (Archivo archivo: git.getI().getArchivos()){
+            archivosCommit.add(archivo);                
+        }
+        c1.crearCommit("David", "commit", archivosCommit);
+        System.out.println(c1);
+        git.getLr().add(c1);
+        System.out.print(git.getLr());        
     }    
 }
 

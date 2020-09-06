@@ -101,6 +101,6 @@ public class Repositorios {
     //toString
     @Override
     public String toString() {
-        return "Repositorios{" + "w=" + w + ", i=" + i + "lr=" + lr + '}';
+        return "Repositorios{\n" + "w=" + w + ",\ni=" + i + ",\nlr=" + lr + "}\n";
     }
 }

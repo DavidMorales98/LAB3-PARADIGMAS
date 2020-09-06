@@ -35,11 +35,7 @@ public class JavaApplication1 {
         
         System.out.print(git.getW());
         
-        for (Archivo archivo: git.getW().getArchivos()){
-            if (git.getI().contains(archivo)==false){
-                git.getI().add(archivo);                
-            }
-        }
+        git.add();
         
         System.out.print(git.getI());
         

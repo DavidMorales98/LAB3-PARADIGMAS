@@ -60,6 +60,15 @@ public class Repositorios {
         w = new Workspace();
         i = new Index();
     }
+    //add
+    public void add(){
+        for (Archivo archivo: this.getW().getArchivos()){
+            if (this.getI().contains(archivo)==false){
+                this.getI().add(archivo);                
+            }
+        }
+    }
+    
     //status
     public String determinarStatus(){
         return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"");

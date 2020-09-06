@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class Repositorios {
     //Atributos
+    public String nombreRepo;
+    public String autorRepo;
     public Workspace w;
     public Index i;
     
@@ -37,12 +39,32 @@ public class Repositorios {
         this.i = i;
     }
 
+    public String getNombreRepo() {
+        return nombreRepo;
+    }
+
+    public void setNombreRepo(String nombreRepo) {
+        this.nombreRepo = nombreRepo;
+    }
+
+    public String getAutorRepo() {
+        return autorRepo;
+    }
+
+    public void setAutorRepo(String autorRepo) {
+        this.autorRepo = autorRepo;
+    }
+
     //init
     public void init() {
         w = new Workspace();
         i = new Index();
     }
     
+    //status
+    public String status(){
+        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"");
+    }
     //agregarArchivo 
     public void agregarArchivo(Archivo a){
         Workspace nw = this.getW();

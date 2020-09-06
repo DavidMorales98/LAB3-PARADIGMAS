@@ -17,8 +17,13 @@ public class Workspace {
     public Workspace(){}
     
     //Metodos
+    //add
     public void add(Archivo a){
         workspace.add(a);
+    }
+    //size
+    public int size(){
+        return workspace.size();
     }
     //toString
     @Override

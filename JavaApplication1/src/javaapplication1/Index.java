@@ -19,6 +19,14 @@ public class Index {
     public Index(){}
     
     //Metodos
+    //add
+    public void add(Archivo a){
+        index.add(a);
+    }
+    //size
+    public int size(){
+        return index.size();
+    }
     //toString
     @Override
     public String toString() {

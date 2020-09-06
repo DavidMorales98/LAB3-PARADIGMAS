@@ -16,6 +16,7 @@ public class Repositorios {
     public String autorRepo;
     public Workspace w;
     public Index i;
+    public LocalRepository lr;
     
     //Constructor
     public Repositorios(){};
@@ -54,16 +55,26 @@ public class Repositorios {
         this.autorRepo = autorRepo;
     }
 
+    public LocalRepository getLr() {
+        return lr;
+    }
+
+    public void setLr(LocalRepository lr) {
+        this.lr = lr;
+    }
+
     //init
     public void init() {        
         w = new Workspace();
         i = new Index();
+        lr = new LocalRepository();
     }
     public void init(String nombreRepo, String autorRepo) {
         this.nombreRepo = nombreRepo;
         this.autorRepo = autorRepo;
         w = new Workspace();
         i = new Index();
+        lr = new LocalRepository();
     }
     //add
     public void add(){
@@ -76,7 +87,7 @@ public class Repositorios {
     
     //status
     public String determinarStatus(){
-        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"");
+        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"");
     }
     public void status(){
         System.out.println(this.determinarStatus());
@@ -90,6 +101,6 @@ public class Repositorios {
     //toString
     @Override
     public String toString() {
-        return "Repositorios{" + "w=" + w + ", i=" + i + '}';
+        return "Repositorios{" + "w=" + w + ", i=" + i + "lr=" + lr + '}';
     }
 }

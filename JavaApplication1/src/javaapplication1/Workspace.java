@@ -21,7 +21,7 @@ public class Workspace {
     public void setWorkspace(ArrayList<Archivo> workspace) {
         this.workspace = workspace;
     }
-    public ArrayList<Archivo> getWorkspace(){    
+    public ArrayList<Archivo> getArchivos(){    
         return workspace;
     }
     //add

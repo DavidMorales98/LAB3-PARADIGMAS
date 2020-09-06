@@ -58,12 +58,10 @@ public class Archivo{
         return contenido;
     }    
     
-
-    public boolean equals(Archivo obj) {
-        if (obj == null) {
-            return false;
-        }
-        Archivo a =(Archivo)obj;
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;        
+        Archivo a =(Archivo)o;
         return (nombre.equalsIgnoreCase(a.nombre));
     }
     

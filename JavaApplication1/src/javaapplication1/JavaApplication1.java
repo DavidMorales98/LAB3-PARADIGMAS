@@ -19,17 +19,30 @@ public class JavaApplication1 {
     public static void main(String[] args){
         Repositorios git = new Repositorios();
         git.init();
+        
         Archivo a = new Archivo();
         a.crearArchivo("A","aa");
+        
         Archivo b = new Archivo();
         b.crearArchivo("A","aaa");
         
-        git.agregarArchivo(a);
+        Archivo c = new Archivo();
+        c.crearArchivo("AA","aaa");
         
-        System.out.println(b);
+        git.agregarArchivo(a);
+        git.agregarArchivo(b);
+        git.agregarArchivo(c);
+        
         System.out.print(git.getW());
         
-        System.out.print(git.getW().contains(b));
+        for (Archivo archivo: git.getW().getArchivos()){
+            if (git.getI().contains(archivo)==false){
+                git.getI().add(archivo);                
+            }
+        }
+        
+        System.out.print(git.getI());
+        
     }    
 }
 

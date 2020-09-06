@@ -25,7 +25,7 @@ public class JavaApplication1 {
         a.crearArchivo("A","aa");
         git.agregarArchivo(a);
         System.out.println(git);
-        System.out.println(git.status());
+        git.status();
     }    
 }
 

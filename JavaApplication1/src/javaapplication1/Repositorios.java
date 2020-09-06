@@ -60,10 +60,12 @@ public class Repositorios {
         w = new Workspace();
         i = new Index();
     }
-    
     //status
-    public String status(){
+    public String determinarStatus(){
         return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"");
+    }
+    public void status(){
+        System.out.println(this.determinarStatus());
     }
     //agregarArchivo 
     public void agregarArchivo(Archivo a){
@@ -71,7 +73,7 @@ public class Repositorios {
         nw.add(a);
         this.setW(nw);
     }
-    
+    //toString
     @Override
     public String toString() {
         return "Repositorios{" + "w=" + w + ", i=" + i + '}';

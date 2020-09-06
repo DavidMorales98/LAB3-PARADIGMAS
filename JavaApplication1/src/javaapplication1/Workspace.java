@@ -15,10 +15,17 @@ public class Workspace {
     
     //Constructor 
     public Workspace(){}
-    
+
     //Metodos
+    //Setter and Getter
+    public void setWorkspace(ArrayList<Archivo> workspace) {
+        this.workspace = workspace;
+    }
+    public ArrayList<Archivo> getWorkspace(){    
+        return workspace;
+    }
     //add
-    public void add(Archivo a){
+    public void add(Archivo a) {
         workspace.add(a);
     }
     //size

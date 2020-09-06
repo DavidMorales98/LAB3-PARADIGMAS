@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.util.Date;
+import java.util.Objects;
 
 public class Archivo{
     //Atributos
@@ -56,6 +57,15 @@ public class Archivo{
     public String getContenido() {
         return contenido;
     }    
+    
+
+    public boolean equals(Archivo obj) {
+        if (obj == null) {
+            return false;
+        }
+        Archivo a =(Archivo)obj;
+        return (nombre.equalsIgnoreCase(a.nombre));
+    }
     
     //toString
     @Override    

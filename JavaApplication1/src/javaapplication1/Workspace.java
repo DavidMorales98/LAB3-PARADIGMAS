@@ -32,10 +32,14 @@ public class Workspace {
     public int size(){
         return workspace.size();
     }
+    //contains
+    public boolean contains(Archivo a){
+        return workspace.contains(a);
+    }
     //toString
     @Override
     public String toString() {
-        return "Workspace{" + "workspace=" + workspace + '}';
+        return "Workspace{" + "workspace=" + workspace + "}\n";
     }
     
     

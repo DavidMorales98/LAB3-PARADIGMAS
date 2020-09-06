@@ -27,9 +27,13 @@ public class Index {
     public int size(){
         return index.size();
     }
+    //contains
+    public boolean contains(Archivo a){
+        return index.contains(a);
+    }
     //toString
     @Override
     public String toString() {
-        return "Index{" + "index=" + index + '}';
+        return "Index{" + "index=" + index + "}\n";
     }
 }

@@ -19,13 +19,17 @@ public class JavaApplication1 {
     public static void main(String[] args){
         Repositorios git = new Repositorios();
         git.init();
-        System.out.println(git);
-        
         Archivo a = new Archivo();
         a.crearArchivo("A","aa");
+        Archivo b = new Archivo();
+        b.crearArchivo("A","aaa");
+        
         git.agregarArchivo(a);
-        System.out.println(git);
-        git.status();
+        
+        System.out.println(b);
+        System.out.print(git.getW());
+        
+        System.out.print(git.getW().contains(b));
     }    
 }
 

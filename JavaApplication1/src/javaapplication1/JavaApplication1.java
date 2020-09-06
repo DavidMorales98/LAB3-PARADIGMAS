@@ -31,17 +31,8 @@ public class JavaApplication1 {
         git.add();
         
         System.out.print(git.getI());
-        
-        Commit c1 = new Commit();
-        ArrayList<Archivo> archivosCommit = new ArrayList<Archivo>();    
-        
-        for (Archivo archivo: git.getI().getArchivos()){
-            archivosCommit.add(archivo);                
-        }
-        c1.crearCommit("David", "commit", archivosCommit);
-        System.out.println(c1);
-        git.getLr().add(c1);
-        System.out.print(git.getLr());        
+        git.commit();
+        System.out.print(git);        
     }    
 }
 

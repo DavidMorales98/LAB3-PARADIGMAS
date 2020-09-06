@@ -5,6 +5,8 @@
  */
 package javaapplication1;
 
+import java.util.ArrayList;
+
 
 /**
  *
@@ -83,6 +85,16 @@ public class Repositorios {
                 this.getI().add(archivo);                
             }
         }
+    }
+    public void commit(){
+        Commit c1 = new Commit();
+        ArrayList<Archivo> archivosCommit = new ArrayList<Archivo>();    
+        
+        for (Archivo archivo: this.getI().getArchivos()){
+            archivosCommit.add(archivo);                
+        }
+        c1.crearCommit("David", "commit", archivosCommit);
+        this.getLr().add(c1);
     }
     
     //status

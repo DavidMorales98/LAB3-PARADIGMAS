@@ -95,6 +95,9 @@ public class Repositorios {
         }
         c1.crearCommit("David", "commit", archivosCommit);
         this.getLr().add(c1);
+        
+        Index ni = new Index();
+        this.setI(ni);
     }
     
     //status

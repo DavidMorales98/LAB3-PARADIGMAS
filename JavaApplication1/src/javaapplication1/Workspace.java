@@ -10,25 +10,23 @@ import java.util.ArrayList;
  * @author David
  */
 public class Workspace {
-    public Archivo archivosWorkspace[];
+    //Atributos
+    public ArrayList<Archivo> workspace = new ArrayList<Archivo>();
     
-    public Workspace(int n){
-        archivosWorkspace = new Archivo[n];
+    //Constructor 
+    public Workspace(){}
+    
+    //Metodos
+    public void add(Archivo a){
+        workspace.add(a);
+    }
+    //toString
+    @Override
+    public String toString() {
+        return "Workspace{" + "workspace=" + workspace + '}';
     }
     
-    public boolean añadirArchivo( Archivo a){
-        for (int i = 0; i < archivosWorkspace.length; i++){
-            if (archivosWorkspace[i] == null){
-                archivosWorkspace[i] = a;
-                return true;
-            }
-        }
-        return false;
-    }
-    public void imprimir(){
-        for (int j = 0; j < archivosWorkspace.length; j++){
-            System.out.println(archivosWorkspace[j]);
-        }
-    }
+    
+
 }
 

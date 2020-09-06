@@ -5,29 +5,23 @@
  */
 package javaapplication1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author David
  */
 public class Index {
-    public Archivo archivosIndex[];
+    //Atributos
+    public ArrayList<Archivo> index = new ArrayList<Archivo>();
     
-    public Index(int n){
-        archivosIndex = new Archivo[n];
-    }
-    public boolean añadirArchivo( Archivo a){
-        for (int i = 0; i < archivosIndex.length; i++){
-            if (archivosIndex[i] == null){
-                archivosIndex[i] = a;
-                return true;
-            }
-        }
-        return false;
-    }
+    //Constructor
+    public Index(){}
     
-    public void imprimir(){
-        for (int j = 0; j < archivosIndex.length; j++){
-            System.out.println(archivosIndex[j]);
-        }
-    }    
+    //Metodos
+    //toString
+    @Override
+    public String toString() {
+        return "Index{" + "index=" + index + '}';
+    }
 }

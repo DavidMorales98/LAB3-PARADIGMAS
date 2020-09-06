@@ -86,6 +86,7 @@ public class Repositorios {
             }
         }
     }
+    //commit
     public void commit(){
         Commit c1 = new Commit();
         ArrayList<Archivo> archivosCommit = new ArrayList<Archivo>();    
@@ -93,7 +94,7 @@ public class Repositorios {
         for (Archivo archivo: this.getI().getArchivos()){
             archivosCommit.add(archivo);                
         }
-        c1.crearCommit("David", "commit", archivosCommit);
+        c1.crearCommit(archivosCommit);
         this.getLr().add(c1);
         
         Index ni = new Index();

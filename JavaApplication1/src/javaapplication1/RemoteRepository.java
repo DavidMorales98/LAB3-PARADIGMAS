@@ -11,32 +11,32 @@ import java.util.ArrayList;
  *
  * @author David
  */
-public class LocalRepository {
+public class RemoteRepository {
     //Atributos
-    public ArrayList<Commit> localRepo = new ArrayList<Commit>();
+    public ArrayList<Commit> remoteRepo = new ArrayList<Commit>();   
     
     //Constructor 
-    public LocalRepository(){}
+    public RemoteRepository(){}  
     
     //Metodos
     //Getter and Setter
-    public void setLocalRepo(ArrayList<Commit> localRepo) {
-        this.localRepo = localRepo;
+    public ArrayList<Commit> getRemoteRepo() {
+        return remoteRepo;
     }
-    public ArrayList<Commit> getCommits(){    
-        return localRepo;
+    public void setRemoteRepo(ArrayList<Commit> remoteRepo) {
+        this.remoteRepo = remoteRepo;
     }
     //add
     public void add(Commit c) {
-        localRepo.add(c);
+        remoteRepo.add(c);
     }
     //size
     public int size(){
-        return localRepo.size();
+        return remoteRepo.size();
     }
-    
+
     @Override
     public String toString() {
-        return "LocalRepository{" + "LocalRepository=" + localRepo + "}\n";
-    }    
+        return "RemoteRepository{" + "remoteRepo=" + remoteRepo + "}\n";
+    }
 }

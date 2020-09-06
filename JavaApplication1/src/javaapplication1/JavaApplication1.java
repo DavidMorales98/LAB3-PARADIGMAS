@@ -18,7 +18,7 @@ public class JavaApplication1 {
      */
     public static void main(String[] args){
         Repositorios git = new Repositorios();
-        git.init();
+        git.init("David","LAB");
         
         Archivo a = new Archivo();
         a.crearArchivo("A","aa");
@@ -34,10 +34,13 @@ public class JavaApplication1 {
         git.agregarArchivo(c);
         
         System.out.print(git.getW());
+        System.out.print(git.getI());
         
         git.add();
+        System.out.print(git.getW());
+        System.out.print(git.getI());        
         
-        System.out.print(git.getI());
+        git.status();
         
     }    
 }

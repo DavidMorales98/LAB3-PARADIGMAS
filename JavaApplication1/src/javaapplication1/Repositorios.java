@@ -56,7 +56,13 @@ public class Repositorios {
     }
 
     //init
-    public void init() {
+    public void init() {        
+        w = new Workspace();
+        i = new Index();
+    }
+    public void init(String nombreRepo, String autorRepo) {
+        this.nombreRepo = nombreRepo;
+        this.autorRepo = autorRepo;
         w = new Workspace();
         i = new Index();
     }
@@ -87,6 +93,4 @@ public class Repositorios {
     public String toString() {
         return "Repositorios{" + "w=" + w + ", i=" + i + '}';
     }
-    
-
 }

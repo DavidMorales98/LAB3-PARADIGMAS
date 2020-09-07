@@ -21,7 +21,7 @@ public class LAB3main {
         Repositorios git = new Repositorios();
         Scanner in = new Scanner(System.in);
         while (repositorioInicializado == false){
-            System.out.println("¿Desea inicializar su repositorio?(1.-Si/2.-No)");
+            System.out.println("Desea inicializar su repositorio?(1.-Si/2.-No)");
         
             int resp = in.nextInt();
             if (resp == 1){
@@ -30,8 +30,8 @@ public class LAB3main {
                 menuSimulador = true;
             }
             while (menuSimulador == true){
-                System.out.println("### SIMULACIÓN DE GIT ###");
-                System.out.println("Escoja su opción:");
+                System.out.println("### SIMULACION DE GIT ###");
+                System.out.println("Escoja su opcion:");
                 System.out.println("1. add");
                 System.out.println("2. commit");
                 System.out.println("3. push");
@@ -39,7 +39,7 @@ public class LAB3main {
                 System.out.println("5. status");
                 System.out.println("6. Crear nuevo archivo");
                 System.out.println("7. Salir");
-                System.out.println("INTRODUZCA SU OPCIÓN");    
+                System.out.println("INTRODUZCA SU OPCION");    
             
                 int opcion = in.nextInt();
                 if (repositorioInicializado == true){
@@ -65,12 +65,12 @@ public class LAB3main {
                                 
                     }
                     else if (opcion == 7){
-                        System.out.println("Adiós, hasta pronto.");
+                        System.out.println("Adios, hasta pronto.");
                         break;
                                 
                     }
                     else{
-                            System.out.println("El valor no es válido.");
+                            System.out.println("El valor no es valido.");
                     }
                 }
                 else{

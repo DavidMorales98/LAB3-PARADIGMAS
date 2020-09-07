@@ -6,6 +6,7 @@
 package javaapplication1;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 /**
@@ -75,7 +76,13 @@ public class Repositorios {
     }
 
     //init
-    public void init() {        
+    public void init() {    
+        Scanner in = new Scanner(System.in);
+        System.out.println("Ingrese el nombre de su repositorio: ");
+        this.nombreRepo = in.nextLine();
+        System.out.println("Ingrese el autor del repositorio: ");
+        this.autorRepo = in.nextLine();
+        
         w = new Workspace();
         i = new Index();
         lr = new LocalRepository();

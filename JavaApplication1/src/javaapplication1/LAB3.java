@@ -18,20 +18,18 @@ public class LAB3 {
     public static void main(String[] args){
         boolean menuSimulador = true;
         boolean repositorioInicializado = false;
-        
+        Repositorios git = new Repositorios();       
         Scanner in = new Scanner(System.in);
         while (repositorioInicializado == false){
             System.out.println("¿Desea inicializar su repositorio?(1.-Si/2.-No)");
         
             int resp = in.nextInt();
             if (resp == 1){
-                Repositorios git = new Repositorios();
-                git.init("LAB","David");
+                git.init();    
                 repositorioInicializado = true;
                 menuSimulador = true;
             }
             while (menuSimulador == true){
-                Workspace w = new Workspace();           
                 System.out.println("### SIMULACIÓN DE GIT ###");
                 System.out.println("Escoja su opción:");
                 System.out.println("1. add");
@@ -46,24 +44,24 @@ public class LAB3 {
                 int opcion = in.nextInt();
                 if (repositorioInicializado == true){
                     if (opcion == 1){
-                            System.out.println("gitAdd");
+                            git.add();
                     }
                     else if (opcion == 2){
-                            System.out.println("gitCommit");
+                            git.commit();
                     }
                     else if (opcion == 3){
-                            System.out.println("gitPush");
+                            git.push();
                     }
                     else if (opcion == 4){
-                            System.out.println("gitPull");
+                            git.pull();
                     }
                     else if (opcion == 5){
-                            System.out.println("gitStatus");
+                            git.status();
                     }
                     else if (opcion == 6){
                             Archivo a = new Archivo();
                             a.crearArchivo();
-                            a.toString();
+                            git.agregarArchivo(a);
                                 
                     }
                     else if (opcion == 7){

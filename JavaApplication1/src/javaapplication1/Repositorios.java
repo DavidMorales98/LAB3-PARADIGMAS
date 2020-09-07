@@ -114,7 +114,7 @@ public class Repositorios {
         this.setI(ni);
     }
     
-    //pull
+    //push
     public boolean situacionRemote(){
         return this.getRr().getCommits().containsAll(this.getLr().getCommits());
     }
@@ -128,6 +128,16 @@ public class Repositorios {
         }   
     }
     
+    //pull
+    public void pull(){
+        for(Commit commit: this.getRr().getCommits()){
+            for(Archivo archivo: commit.getArchivos()){
+                if(this.getW().getArchivos().contains(archivo) == false){
+                    this.getW().getArchivos().add(archivo);
+                }
+            }
+        }
+    }    
     //status
     public String determinarStatus(){
         return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"") + "\n ¿Se encuentra actualizado el Remote Repository?: ";

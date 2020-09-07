@@ -32,11 +32,16 @@ public class JavaApplication1 {
         git.commit();
         git.agregarArchivo(c);
         git.add();      
-        git.commit();       
+        git.commit();
         git.push();
         System.out.print(git);
-        git.status();
         
+        Workspace nw = new Workspace();
+        git.setW(nw);
+        System.out.print(git);
+        
+        git.pull();
+        System.out.print(git);        
     }    
 }
 

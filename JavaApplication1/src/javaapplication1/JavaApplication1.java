@@ -33,7 +33,7 @@ public class JavaApplication1 {
         git.agregarArchivo(c);
         git.add();      
         git.commit();       
-        git.pull();
+        git.push();
         System.out.print(git);
         git.status();
         

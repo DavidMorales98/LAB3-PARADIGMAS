@@ -118,7 +118,7 @@ public class Repositorios {
     public boolean situacionRemote(){
         return this.getRr().getCommits().containsAll(this.getLr().getCommits());
     }
-    public void pull(){
+    public void push(){
         if (this.situacionRemote() == false){
             for(Commit commit:this.getLr().getCommits()){     
                 if (this.getRr().getCommits().contains(commit) == false){

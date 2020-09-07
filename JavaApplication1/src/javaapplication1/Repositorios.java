@@ -199,7 +199,7 @@ public class Repositorios {
      * @return un string con el status del repositorio, primero es hecho un string para luego ser impreso en pantalla
      */
     public String determinarStatus(){
-        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"") + "\n ¿Se encuentra actualizado el Remote Repository?: ";
+        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"") + "\n Se encuentra actualizado el Remote Repository?: ";
     }
     public void status(){
         System.out.println(this.determinarStatus() + situacionRemote() + "\n");

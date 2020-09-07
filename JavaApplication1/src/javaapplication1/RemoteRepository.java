@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+
 
 import java.util.ArrayList;
 
@@ -13,32 +13,48 @@ import java.util.ArrayList;
  */
 public class RemoteRepository {
     //Atributos
-    public ArrayList<Commit> remoteRepo = new ArrayList<Commit>();   
+    private ArrayList<Commit> remoteRepo = new ArrayList<Commit>();   
     
     //Constructor 
     public RemoteRepository(){}  
     
     //Metodos
     //Getter and Setter
+    /**
+     * 
+     * @return la lista de commit del RR
+     */
     public ArrayList<Commit> getCommits() {
         return remoteRepo;
     }
+    /**
+     * 
+     * @param remoteRepo corresponde a una lista de commit
+     */
     public void setRemoteRepo(ArrayList<Commit> remoteRepo) {
         this.remoteRepo = remoteRepo;
     }
     //add
+    /**
+     * 
+     * @param c es un commit que se añadira a RR
+     */
     public void add(Commit c) {
         remoteRepo.add(c);
     }
-    //size
-    public int size(){
-        return remoteRepo.size();
-    }
     //contains
+    /**
+     * 
+     * @param c es un commit que se verificara si existe en el RR
+     * @return true si se encuentra false en caso contrario
+     */
     public boolean contains(Commit c){
         return remoteRepo.contains(c);
     }  
     @Override
+    /**
+     * @return un string que permite ver el contenido del RR
+     */
     public String toString() {
         return "RemoteRepository{" + "RemoteRepository=" + remoteRepo + "}\n";
     }

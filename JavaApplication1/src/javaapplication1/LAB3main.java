@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+
 import java.util.Scanner;
 
 /**
  *
  * @author David
  */
-public class LAB3 {
+public class LAB3main {
 
     /**
      * @param args the command line arguments
@@ -18,7 +18,7 @@ public class LAB3 {
     public static void main(String[] args){
         boolean menuSimulador = true;
         boolean repositorioInicializado = false;
-        Repositorios git = new Repositorios();       
+        Repositorios git = new Repositorios();
         Scanner in = new Scanner(System.in);
         while (repositorioInicializado == false){
             System.out.println("¿Desea inicializar su repositorio?(1.-Si/2.-No)");
@@ -34,8 +34,8 @@ public class LAB3 {
                 System.out.println("Escoja su opción:");
                 System.out.println("1. add");
                 System.out.println("2. commit");
-                System.out.println("3. pull");
-                System.out.println("4. push");
+                System.out.println("3. push");
+                System.out.println("4. pull");
                 System.out.println("5. status");
                 System.out.println("6. Crear nuevo archivo");
                 System.out.println("7. Salir");

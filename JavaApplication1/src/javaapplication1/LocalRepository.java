@@ -33,6 +33,10 @@ public class LocalRepository {
     //size
     public int size(){
         return localRepo.size();
+    }
+    //contains
+    public boolean contains(Commit c){
+        return localRepo.contains(c);
     }    
     @Override
     public String toString() {

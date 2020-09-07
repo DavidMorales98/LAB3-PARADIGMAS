@@ -34,9 +34,12 @@ public class RemoteRepository {
     public int size(){
         return remoteRepo.size();
     }
-
+    //contains
+    public boolean contains(Commit c){
+        return remoteRepo.contains(c);
+    }  
     @Override
     public String toString() {
-        return "RemoteRepository{" + "remoteRepo=" + remoteRepo + "}\n";
+        return "RemoteRepository{" + "RemoteRepository=" + remoteRepo + "}\n";
     }
 }

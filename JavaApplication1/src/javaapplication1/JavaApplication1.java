@@ -22,17 +22,20 @@ public class JavaApplication1 {
         Archivo a = new Archivo();
         a.crearArchivo("A","aa");      
         Archivo b = new Archivo();
-        b.crearArchivo("A","aaa");       
+        b.crearArchivo("B","aaa");       
         Archivo c = new Archivo();
-        c.crearArchivo("AA","aaa");       
+        c.crearArchivo("C","aaaa");  
         
         git.agregarArchivo(a);
         git.agregarArchivo(b);
         git.add();
         git.commit();
-        System.out.println(git);
+        git.agregarArchivo(c);
+        git.add();      
+        git.commit();       
+        git.pull();
+        System.out.print(git);
         git.status();
-        
         
     }    
 }

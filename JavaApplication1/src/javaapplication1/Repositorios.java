@@ -20,7 +20,6 @@ public class Repositorios {
     public Index i;
     public LocalRepository lr;
     public RemoteRepository rr;
-    public boolean sR;
     
     //Constructor
     public Repositorios(){};
@@ -90,6 +89,7 @@ public class Repositorios {
         lr = new LocalRepository();
         rr = new RemoteRepository();
     }
+    
     //add
     public void add(){
         for (Archivo archivo: this.getW().getArchivos()){
@@ -98,6 +98,7 @@ public class Repositorios {
             }
         }
     }
+    
     //commit
     public void commit(){
         Commit c1 = new Commit();
@@ -106,17 +107,28 @@ public class Repositorios {
         for (Archivo archivo: this.getI().getArchivos()){
             archivosCommit.add(archivo);                
         }
-        c1.crearCommit("David","MiCommit",archivosCommit);
+        c1.crearCommit(archivosCommit);
         this.getLr().add(c1);
         
         Index ni = new Index();
         this.setI(ni);
     }
     
-    //status
+    //pull
     public boolean situacionRemote(){
         return this.getRr().getCommits().containsAll(this.getLr().getCommits());
     }
+    public void pull(){
+        if (this.situacionRemote() == false){
+            for(Commit commit:this.getLr().getCommits()){     
+                if (this.getRr().getCommits().contains(commit) == false){
+                    this.getRr().getCommits().add(commit);
+                }    
+            }
+        }   
+    }
+    
+    //status
     public String determinarStatus(){
         return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"") + "\n ¿Se encuentra actualizado el Remote Repository?: ";
     }
@@ -124,12 +136,14 @@ public class Repositorios {
         System.out.println(this.determinarStatus() + situacionRemote() + "\n");
 
     }
+    
     //agregarArchivo 
     public void agregarArchivo(Archivo a){
         Workspace nw = this.getW();
         nw.add(a);
         this.setW(nw);
     }
+    
     //toString
     @Override
     public String toString() {

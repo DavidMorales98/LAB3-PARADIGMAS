@@ -79,10 +79,14 @@ public class Commit {
     public void setArchivos(ArrayList<Archivo> archivos) {
         this.archivosCommit = archivos;
     }
-    
+    public boolean equals(Object o) {
+        if (o == null) return false;        
+        Commit c =(Commit)o;
+        return (mensaje.equalsIgnoreCase(c.mensaje));
+    }
     
     @Override
     public String toString(){
-        return "Commit{" + "fechaC=" + fechaC + ", autor=" + autor + ", mensaje= " + mensaje + ", archivos=" + archivosCommit + "}";
+        return "Commit{" + "fechaC=" + fechaC + ", autor=" + autor + ", mensaje= " + mensaje + ", archivos=" + archivosCommit + "}\n";
     }    
 }

@@ -25,14 +25,15 @@ public class JavaApplication1 {
         b.crearArchivo("A","aaa");       
         Archivo c = new Archivo();
         c.crearArchivo("AA","aaa");       
+        
         git.agregarArchivo(a);
         git.agregarArchivo(b);
-        git.agregarArchivo(c); 
         git.add();
-        
-        System.out.print(git.getI());
         git.commit();
-        System.out.print(git);        
+        System.out.println(git);
+        git.status();
+        
+        
     }    
 }
 

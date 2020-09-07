@@ -20,7 +20,7 @@ public class RemoteRepository {
     
     //Metodos
     //Getter and Setter
-    public ArrayList<Commit> getRemoteRepo() {
+    public ArrayList<Commit> getCommits() {
         return remoteRepo;
     }
     public void setRemoteRepo(ArrayList<Commit> remoteRepo) {

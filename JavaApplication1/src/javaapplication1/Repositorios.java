@@ -19,6 +19,8 @@ public class Repositorios {
     public Workspace w;
     public Index i;
     public LocalRepository lr;
+    public RemoteRepository rr;
+    public boolean sR;
     
     //Constructor
     public Repositorios(){};
@@ -65,11 +67,20 @@ public class Repositorios {
         this.lr = lr;
     }
 
+    public RemoteRepository getRr() {
+        return rr;
+    }
+
+    public void setRr(RemoteRepository rr) {
+        this.rr = rr;
+    }
+
     //init
     public void init() {        
         w = new Workspace();
         i = new Index();
         lr = new LocalRepository();
+        rr = new RemoteRepository();
     }
     public void init(String nombreRepo, String autorRepo) {
         this.nombreRepo = nombreRepo;
@@ -77,6 +88,7 @@ public class Repositorios {
         w = new Workspace();
         i = new Index();
         lr = new LocalRepository();
+        rr = new RemoteRepository();
     }
     //add
     public void add(){
@@ -94,7 +106,7 @@ public class Repositorios {
         for (Archivo archivo: this.getI().getArchivos()){
             archivosCommit.add(archivo);                
         }
-        c1.crearCommit(archivosCommit);
+        c1.crearCommit("David","MiCommit",archivosCommit);
         this.getLr().add(c1);
         
         Index ni = new Index();
@@ -102,11 +114,15 @@ public class Repositorios {
     }
     
     //status
+    public boolean situacionRemote(){
+        return this.getRr().getCommits().containsAll(this.getLr().getCommits());
+    }
     public String determinarStatus(){
-        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"");
+        return "Repositorio{Nombre Repositorio: " + this.getNombreRepo() + ", autorRepositorio: " + this.getAutorRepo()+ "}\n Archivos en Workspace:" + (w.size()+"") + "\n Archivos en Index:" + (i.size()+"") + "\n Commits en Local Repository:" + (lr.size()+"") + "\n ¿Se encuentra actualizado el Remote Repository?: ";
     }
     public void status(){
-        System.out.println(this.determinarStatus());
+        System.out.println(this.determinarStatus() + situacionRemote() + "\n");
+
     }
     //agregarArchivo 
     public void agregarArchivo(Archivo a){
@@ -117,6 +133,6 @@ public class Repositorios {
     //toString
     @Override
     public String toString() {
-        return "Repositorios{\n" + "w=" + w + ",\ni=" + i + ",\nlr=" + lr + "}\n";
+        return "Repositorios{\n" + "w=" + w + ",\ni=" + i + ",\nlr=" + lr + ",\n rr=" + rr + "}\n";
     }
 }
